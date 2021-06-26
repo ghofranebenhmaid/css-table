@@ -1,0 +1,95 @@
+.header {
+   nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1rem;
+      @include breakpoint-up(large) {
+         padding: 1rem 10rem;
+      }
+   }
+   &__logo {
+      font-weight: 700;
+      font-size: $font-size-l;
+   }
+   &__hamburger {
+      span {
+         width: 45px;
+         height: 4px;
+         margin: 10px;
+         background-color: #000;
+         display: block;
+      }
+   }
+   &__menu {
+      &--primary {
+         list-style: none;
+         display: flex;
+
+         li {
+            a {
+               padding: 1rem 1rem;
+               font-size: $font-size-s;
+               font-weight: 400;
+               white-space: nowrap;
+               @include breakpoint-up(large) {
+                  padding: 1rem 2rem;
+               }
+
+               &:hover {
+                  font-weight: 700;
+                  text-decoration-line: underline;
+               }
+            }
+         }
+      }
+      &--secondary {
+         list-style: none;
+         text-transform: uppercase;
+         padding: 1rem 5rem;
+         display: flex;
+         border-bottom: 1px solid #000;
+         @include breakpoint-up(large) {
+            padding: 1rem 10rem;
+         }
+         li {
+            a {
+               padding: 1rem 3rem;
+               font-size: $font-size-s;
+               position: relative;
+               &:before {
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  height: 6px;
+                  bottom: -2px;
+                  left: 0;
+                  z-index: -1;
+               }
+               &:hover {
+                  &:before {
+                     background-color: $color-primary;
+                  }
+               }
+            }
+         }
+      }
+
+      &--mobile {
+         background-color: $color-primary;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding: 1.3rem 0;
+         font-weight: 600;
+         font-size: $font-size-s;
+
+         span {
+            padding: 0.5rem;
+            img {
+               width: 30px;
+            }
+         }
+      }
+   }
+}
