@@ -1,0 +1,44 @@
+.table {
+   @include breakpoint-up(medium) {
+      padding: 1rem 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(14.375rem, 1fr));
+   }
+   @include breakpoint-up(large) {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(14.375rem, 1fr));
+      padding: 1rem 10rem;
+   }
+   .content {
+      border-right: 1px solid #000;
+      border-bottom: 1px solid #000;
+      border-top: 1px solid #000;
+      &:first-child{
+      border-left: 1px solid #000;
+
+      }
+   }
+
+   &__title {
+      border-bottom: 6px solid $color-primary;
+      font-size: $font-size-m;
+
+      padding: 1.3rem 3rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+   }
+   &__subtitle {
+      font-size: $font-size-m;
+      font-weight: 700;
+      padding: 1.3rem 2rem;
+      &:nth-of-type(4) {
+         border-top: 1px solid rgb(0, 0, 0);
+      }
+   }
+   &__list {
+      font-size: $font-size-s;
+      line-height: 2.2rem;
+      padding:  1rem 3rem;
+   }
+}
